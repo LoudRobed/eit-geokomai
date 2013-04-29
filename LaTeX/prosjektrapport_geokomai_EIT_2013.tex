@@ -15,9 +15,9 @@
 
 % Author
 % Fill in here, and use commands in the text. 
-\newcommand{\thesisAuthor}{Geokomai}
-\newcommand{\thesisTitle}{Prosjektrapport }
-\newcommand{\thesisType}{Eksperter i Team}
+\newcommand{\thesisAuthor}{Sania Ahktar\\Andreas Hagen\\Øystein Heimark\\Steffen Henriksen\\Øystein Hjelle\\Odd Andreas Sørsæther}
+\newcommand{\thesisTitle}{Det intelligente transportsystem }
+\newcommand{\thesisType}{Prosjektrapport - Eksperter i Team - Geokomai}
 \newcommand{\thesisDate}{Vår 2013}
 
 % PDF info
@@ -73,7 +73,7 @@
 
 \section*{Abstrakt}
 
-I dag finnes det en rekke applikasjoner og tilgjengelig informasjon relatert til vei, veiforhold, navigasjon, kart, trafikkmeldinger og lignende. Tjenesten Google Maps er nok for mange et kjent fenomen, som er en web-basert applikasjon for kart og navigasjon. Det er også flere kilder som tilbyr informasjon i forbindelse med både trafikkmeldinger og værdata, som for eksempel vegvesenet og yr.no. Alt dette er viktige faktorer for å kunne avgjøre om en reiserute er trygg og effektiv, og det er nettopp dette vi vil belyse i denne oppgaven. Prosjektet vårt går ut på å samordne eksisterende kilder til sanntidsinformasjon til et integrert intelligent system som kan ta beslutninger om hvilke reiseruter som er tryggest og mest effektive for veiferdsel. Den store utfordringen vil være å samordne informasjon og data fra flere forskjellige kilder, som igjen kan danne et grunnlag for å presentere dette på en enkel plattform.
+I dag finnes det en rekke applikasjoner og tilgjengelig informasjon relatert til vei, veiforhold, navigasjon, kart, trafikkmeldinger og lignende. Tjenesten Google Maps er nok for mange et kjent fenomen som er en web-basert applikasjon for kart og navigasjon. Det er også flere kilder som tilbyr informasjon i forbindelse med både trafikkmeldinger og værdata, som for eksempel vegvesenet og yr.no. Alt dette er viktige faktorer for å kunne avgjøre om en reiserute er trygg og effektiv, og det er nettopp dette vi vil belyse i denne oppgaven. Prosjektet vårt går ut på å samordne eksisterende kilder til sanntidsinformasjon til et integrert intelligent system som kan ta beslutninger om hvilke reiseruter som er tryggest og mest effektive for veiferdsel. Den store utfordringen vil være å samordne informasjon og data fra flere forskjellige kilder, som igjen kan danne et grunnlag for å presentere dette på en enkel plattform.
 
 %\begin{itemize}
 %\item the field of research
@@ -117,7 +117,7 @@ Vi vil rette en takk til:
 
 \listoffigures
 
-\listoftables
+%\listoftables
 
 \mainmatter
 
@@ -176,52 +176,6 @@ Undersøkte applikasjoner:
 
 Applikasjonene finnes på Google Play eller Apple App Store
 
-%
-%\begin{itemize}
-%\item when referring to authors:\\
-% \citet{authorson10:_secon_best_paper_in_world} stated something rather nice.
-%\item to cite indirectly: \\
-% Papers should be written nicely \citep{authorson10:_secon_best_paper_in_world}\\
-%or\\
-%In \cite{authorson10:_secon_best_paper_in_world}, a less detailed template was presented.
-%\item To just cite the authors: \\
-%\citeauthor{authorson10:_secon_best_paper_in_world} wrote a nice paper.
-%%\item Or just the year: \citeyear{authorson10:_secon_best_paper_in_world}.
-%%\item You can even cite specific pages: \citet[p. 3]{authorson10:_secon_best_paper_in_world}.
-%\end{itemize}
-%
-%\vspace{0.5cm}
-%
-%\noindent
-%{\bf Introducing figures:} \\
-
-%\begin{figure}[ht]
-%\begin{center}
-%\includegraphics[width=0.5\columnwidth]{figs/figure1.pdf}
-%\caption[Boxes and arrows are nice]{Boxes and arrows are nice (adapted from \citet{authorson10:_secon_best_paper_in_world})}
-%\label{fig:BoxesAndArrowsAreNice}
-%\end{center}
-%\end{figure}
-
-%Remember that when you borrow figures you should always credit the original author --- such as Figure \ref{fig:BoxesAndArrowsAreNice} (adapted from \citet{authorson10:_secon_best_paper_in_world}). Also don't just put the figure in and leave it to the author to try to understand what the figure is. The figure should be put in to convey a message and you need to help the author to understand the message intended by explaining the figure in the text. 
-
-%\vspace{0.5cm}
-%
-%\noindent
-%{\bf Introducing tables in the report: }\\
-%
-%\begin{table}[htdp]
-%\begin{center}
-%\begin{tabular}{|c|c|c|c|c|}\hline\hline
-%This & is & a & nice & table\\\hline
-%This & is & a & nice & table\\\hline\hline
-%\end{tabular}
-%\caption{Example Table}
-%\end{center}
-%\label{tab:ExampleTable}
-%\end{table}%
-
-%As you can see from Table \ref{tab:ExampleTable}, tables are nice. However, again, you need to discuss the contents of the table in the text. You don't need to describe every entry but draw the authors attention to what is important for he/she to glean from the table. 
 
 \section{Internasjonale løsninger}
 I dette avsnittet vil vi se nærmere på det internasjonale markedet for trafikkapplikasjoner, for å undersøke om det finnes noe der ute vi kan bruke. Vi har prøvd å finne løsninger som tilbyr elementer av det vi ønsker å lage, og undersøkt om noe av det vi finner kan gjenbrukes i vår løsning. Fokuset ble spesielt lagt på det tekniske rundt applikasjonene og hvilke metoder de bruker for å samle inn informasjon knyttet til trafikken. Under følger en beskrivelse av de løsningene vi mener er de mest relevante innenfor forskjellige områder knyttet til vår problemstilling.
@@ -229,9 +183,14 @@ I dette avsnittet vil vi se nærmere på det internasjonale markedet for trafikk
 \subsection{Google Maps}
 Google Maps kan beskrives som standarden innen kartløsninger, særlig på Internett. Tjenesten eksisterer både som en webløsning og som apper til de fleste mobile plattformer. En av funksjonene vi la spesielt merke til er muligheten for å vise sanntidsinformasjon fra trafikken. Google Maps viser trafikkmengden ved hjelp av fargekoder langs strekningen, og viser også eventuelle hindringer langs veien. Tjenesten tar hensyn til denne informasjonen når den regner ut hvilen rute som vil være raskest. I tillegg bruker den informasjonen til å estimere drivstofforbruk, ved å ta hensyn til rute, trafikkmengde og biltype.
 
-(bilde)
-Et eksempel på sanntidsdata hentet fra New York.
-Gir informasjon om trafikkmengde, ulykker, veiarbeid, osv.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{figs/google_maps1.png}
+\label{gmaps1}
+\caption{Et eksempel på sanntidsdata hentet fra New York.}
+\end{figure}
+
+%Gir informasjon om trafikkmengde, ulykker, veiarbeid, osv.
 
 Sanntidsdataen blir hentet ved hjelp av anonym innsamling fra GPS-enheter som bruker veiene (en form for crowdsourcing). Google har et enormt brukergrunnlag tilgjengelig ved hjelp av Google Maps applikasjon til Android og iOS enheter. Sanntidsdata fra trafikken er kun utbredt tilgjengelig i de største landene som USA, Frankrike og Storbritannia. Nye land og byer legges til fortløpende. Sanntidsdata vises også i norske byer, men dette gjelder et veldig begrenset antall strekninger, og informasjonen virker ikke å være spesielt nøyaktig.
 
@@ -240,24 +199,38 @@ Google Maps tilbyr mange spennende funskjoner som lett kan tenkes å være en de
 \subsection{Waze}
 Waze er laget av et israelsk selskap og er en meget populær app som brukes over hele verden, men hovedsaklig i USA. All informasjon som leveres til brukeren er generert av andre brukere. Dette gjøres via en applikasjon til smarttelefoner, der man har mulighet til å rapportere ulike type hendelser, som f.eks. ulykker, fareelementer i veien og køer. Disse rapportene blir knyttet til veistrekningen man er på til en hver tid, og brukes til å advare andre trafikanter. 
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{figs/waze1.png}
+\label{waze1}
+\caption{I Waze er det også mulig å sammenligne ruter}
+\end{figure}
+
 Waze genererer både automatiske rapporter med bakgrunn i beveielsene til brukeren og manuelle rapporter som er lagt inn av brukere. De automatiske rapportene genereres ved å blant annet overvåke brukerens hastighet. Hvis man registrerer at brukeren forflytter seg saktere enn den gjeldende fartsgrensen på veien, vil det genereres en rapport om kø i dette området. Man har mulighet for å gi tilbakemelding på rapporter fra andre brukere, ved å enten godkjenne dem eller gi beskjed om at problemet ikke lenger er der. På denne måten vil trafikkmeldingene til en hver tid være oppdatert.
 
-Waze har også mulighet til å sammenligne forskjellige ruter til en bestemt destinasjon. Den vil ta hensyn til rapporter om f.eks. kø og gi et estimat om hvor lang tid hver strekning vil ta. Waze har også innslag av intelligente funksjoner. Waze tilbyr mange spennende funksjoner og mange av dem kan inngå i vår løsning. Det som er spesielt interessant med Waze er alt innhold er generert av brukerene selv og at denne metoden er beviselig kapabel til å produsere et meget godt bilde av trafikken i sanntid.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{figs/waze2.png}
+\label{waze1}
+\caption{Utsnitt av brukergrensesnittet til Waze}
+\end{figure}
+
+Waze har også mulighet til å sammenligne forskjellige ruter til en bestemt destinasjon. Den vil ta hensyn til rapporter om f.eks. kø og gi et estimat om hvor lang tid hver strekning vil ta. Waze har også innslag av intelligente funksjoner. Waze tilbyr mange spennende funksjoner og mange av dem kan inngå i vår løsning. Det som er spesielt interessant med Waze er alt innhold er generert av brukerene selv og at denne metoden er beviselig kapabel til å produsere et meget godt bilde av trafikken i sanntid.\cite{waze1} \cite{waze2}
 
 \subsection{Ras}
-Vi har forsøkt å finne løsninger i utlandet som kan vise rasfare langs en veistrekning uten å lykkes. Det finnes mange lokale informasjonssystemer, noen med tilhørende applikasjoner, som informerer om rasfare i spesielle områder. Dette gjelder helst snøskred og som oftest i forbindelse med skisentre. I tillegg virker som om de fleste av disse løsningene fokuserer på å oppgi risiko for ras i visse områder, og ikke informasjon om når det har gått et ras.
+Vi har forsøkt å finne løsninger i utlandet som kan vise rasfare langs en veistrekning uten å lykkes. Det finnes mange lokale informasjonssystemer, noen med tilhørende applikasjoner, som informerer om rasfare i spesielle områder. Dette gjelder helst snøskred og som oftest i forbindelse med skisentre. I tillegg virker som om de fleste av disse løsningene fokuserer på å oppgi risiko for ras i visse områder, og ikke informasjon om når det har gått et ras.\cite{ras1}
 
 \subsection{Konklusjon}
 Selv om det finnes mange nyttige applikasjoner internasjonalt knyttet til trafikk er vår oppfatning at ingen av dem tilbyr det totale pakken vi ser etter. Spesielt mangelfulle er løsninger som er knyttet til risiko i trafikken. Men det finnes mange gode løsninger der ute som tilbyr elementer av det vi ønsker å integrere i løsningen vår. Det bredeste utvalget finnes innen ruteplanlegging og presentasjon av sanntidsdata fra trafikken. Her er det mye vi kan ta med oss videre, og da spesielt ved å undersøke hvordan disse applikasjonene samler inn data.
 
 \chapter{Analyse av eksisterende datakilder}
 \label{sec:datakilderl}
-{ \it Mangler en introduksjon til kapittelet her} 
+{ \it I dette avsnittet vil vi undersøke hvilket datagrunnlag som finnes for å hente ut den informasjonen vi er interessert i. Vi har undersøkt hvilke kidler som har dataene vi er ute etter og om det finnes gode og åpne API-er som kan benyttes for å hente ut disse dataene. } 
 
 \section{Vei}
 For å kunne advare brukere om hindringer langs den ruten de kjører på er vi avhengig av å kunne hente informasjon om f.eks. ulykker, stengte veier, osv. Den beste kilden til slik informasjon fant vi gjennom vegvesenet som tilbyr en tjeneste kalt Trafikkmeldinger. Nærmest samtlige trafikkapplikasjoner som finnes i Norge henter data fra denne kilden. Disse meldingene tilbyr informasjon om blant annet ulykker, stengte veier og redusert fremkommelighet. Alle meldingene har knyttet til seg metadata som navnet på veistrekningen, veinummeret, posisjonen hvor hendelsen er rapportert. Dette vil gjøre det enklere for oss å filtrere informasjonen og kun presentere relevant informasjon til brukeren. Dataene kan hentes ut via et API i-XML format på veivesenets hjemmesider. Dataene kan også sorteres på fylke, slik at man kun får opp resultater fra der man er.
 
-I tillegg til sanntidsdata trenger vi tilgang til historiske data for ulykker for å lage risikoprofilen. Norsk veidatabank(NVDB) tilbyr slik data, som er tilgjengelig via et eget API, der dataen kan hente ut data i både XML og JSON format. En av svakhetene med denne informasjonen er at ulykker uten personskade ser ut til å registreres sjeldent i NVDB. Det hadde vært fordelaktig å ha en oversikt over mindre ulykker også, for å kunne gi mer data til risikoprofilen. Det finnes et prøveprosjekt mellom Falck og vegvesenet, der man også registrerer mindre ulykker, som utforkjørsler uten personskade samt data rundt disse. Dette er dessverre ikke data som er tilgjengelig for publikum. Selv om det ikke er tilgjengelig per i dag kan det bli det i fremtiden.
+I tillegg til sanntidsdata trenger vi tilgang til historiske data for ulykker for å lage risikoprofilen. Norsk veidatabank(NVDB) tilbyr slik data, som er tilgjengelig via et eget API, der dataen kan hente ut data i både XML og JSON format.\cite{nve} En av svakhetene med denne informasjonen er at ulykker uten personskade ser ut til å registreres sjeldent i NVDB. Det hadde vært fordelaktig å ha en oversikt over mindre ulykker også, for å kunne gi mer data til risikoprofilen. Det finnes et prøveprosjekt mellom Falck og vegvesenet, der man også registrerer mindre ulykker, som utforkjørsler uten personskade samt data rundt disse. Dette er dessverre ikke data som er tilgjengelig for publikum. Selv om det ikke er tilgjengelig per i dag kan det bli det i fremtiden.
 
 Dette er et område der crowdsourcing kan være et nyttig hjelpemiddel. Som tidligere nevnt har vi observert at crowdsourcing er brukt i utlandet med gode resultater som verktøy til å rapportere om nettopp slik informasjon, og vi mener at dette bør være mulig også i Norge. Informasjonen som samles inn ved hjelp av crowdsourcing kan koordineres med data fra blant annet vegvesenet, slik at vi kan presentere så nøyaktig informasjon som mulig. 
 
@@ -265,14 +238,14 @@ Dette er et område der crowdsourcing kan være et nyttig hjelpemiddel. Som tidl
 For å kunne forutse forholdene langs en rute med en viss nøyaktighet er vi avhengige av å hente ut presise værvarsler for steder langs ruten og nærliggende områder. Hvis det for eksempel er meldt kraftige regnbyer i et særlig flomutsatt område langs ruten, er sannsynligheten høy for overflatevann og flom. Da må vår applikasjon være istand til å forutse dette og gi brukeren en advarsel om den potensielle faren. Været har åpenbart stor innvirkning på mange av de fareelementene vi leter etter, derfor er det essensielt å finne en kilde til værdata som er så nøyaktig som mulig. Vær og vind kan endre seg fort, og vi er derfor også avhengig av kunne hente værdata som til en hver tid er oppdatert etter gjeldende forhold. De viktigste kravene vi setter til en slik kilde er derfor at vi må kunne hente nøyaktig og oppdatert informasjon ned til et visst nivå. Med tanke på at vi lager en applikasjon til smarttelefoner er det også ønskelig å kunne hente ut informasjon basert på gjeldende GPS posisjon, da denne informasjonen er lett tilgjengelig i slike applikasjoner. Værdata internasjonalt er gjerne samlet inn av private selskaper og solgt til de som er interessert. I Norge er man derimot så heldig at kan man finne gratis tilgjengelig data fra flere kilder. Vi tatt en nærmere titt på 3 forskjellige kilder, yr.no, storm.no og Meterologisk Institutt.
 
 \subsection{Yr.no}
-Yr.no har tilgjengeliggjort all sin data via et åpent API, som gjør at hvem som helst kan hente data herfra. Det finnes visse restriksjoner på hvor ofte man kan hente ut data, men dette begrenser ikke vår eventuelle bruk av tjenesten. Tjenesten fungerer ved at man sender inn en lokasjon og får tilbake en værmelding for denne lokasjonen. En annen nyttig funksjon yr.no tilbyr er informasjon om værforhold ved fjelloverganger, som jo kan være nyttig når man skal over en av disse. Et negativt aspekt ved yr.no er at det ikke er mulig å hente værvarsler basert på GPS posisjoner, men heller stedsnavn.
+Yr.no har tilgjengeliggjort all sin data via et åpent API,\cite{yr} som gjør at hvem som helst kan hente data herfra. Det finnes visse restriksjoner på hvor ofte man kan hente ut data, men dette begrenser ikke vår eventuelle bruk av tjenesten. Tjenesten fungerer ved at man sender inn en lokasjon og får tilbake en værmelding for denne lokasjonen. En annen nyttig funksjon yr.no tilbyr er informasjon om værforhold ved fjelloverganger, som jo kan være nyttig når man skal over en av disse. Et negativt aspekt ved yr.no er at det ikke er mulig å hente værvarsler basert på GPS posisjoner, men heller stedsnavn.
 
 \subsection{Meteorologisk institutt}
 Meterologisk institutt tilbyr mye de samme dataene som yr.no, og har også et eget API man kan kommunisere med.\cite{met} Forskjellen er at Meterologisk Institutt tilbyr større mengder data som i tillegg er mer detaljerte. Her kan man hente ut informasjon om alt fra skogbrannsfare til bølgehøyde i tillegg til detaljerte værvarsler. Man kan til og med hente hvor stor sannsynligheten for at et gitt værvarsel slår til. Informasjonen som er tilgjengelig er hentet fra værstasjoner som er plassert rundt om i Norge. Informasjonen er gjort tilgjengelig via et REST API og blir returnert i XML format.
 
 \subsection{Storm.no}
 Storm.no tilbyr dessverre ikke et åpent API for å hente ut data. De tilbyr derimot en tjeneste som ligner litt på det vi har tenkt å levere, nemlig trafikkvær. Her kan man planlegge en rute på et kart og få opp en værmelding langs denne ruten. På kartet er det også lagt inn veimeldinger. Vi kan dessverre ikke bruke denne tjenesten i vår applikasjon da det ikke er gjort tilgjengelig via et åpent API, men det viser at det er mulig og at det finnes interesse for slik informasjon blant det norske folk.
-Det ble tidlig klart at Meterologisk Institutt var den kilden som passet våre behov best. Det tilbyr store mengder detaljerte data som er åpent og lett tilgjengelig via et REST API som enkelt kan kommunisere med vår tenkte applikasjon. I tillegg henter man informasjon basert på GPS posisjoner, noe som passer bra med tanke på at vi til en hver tid har tilgang til GPS posisjonen til brukeren gjennom bruken av smarttelefoner.
+Det ble tidlig klart at Meterologisk Institutt var den kilden som passet våre behov best. Det tilbyr store mengder detaljerte data som er åpent og lett tilgjengelig via et REST API som enkelt kan kommunisere med vår tenkte applikasjon. I tillegg henter man informasjon basert på GPS posisjoner, noe som passer bra med tanke på at vi til en hver tid har tilgang til GPS posisjonen til brukeren gjennom bruken av smarttelefoner.\cite{storm}
 
 \section{Ras og Flom}
  Skred er en årsak til både forsinkelser og ulykker. Vi håper å kunne gi sjåføren en bedre og mer nøyaktig form for varsling av rasutsatte områder ved å hente oppdatert og tidsrelevant informasjon og analysere disse for brukeren. Skredfareskiltene som står langs veien tar ikke høyde for varierende risiko i ulike sesonger eller værforhold, og heller ikke typen skred, og det kan derfor være lett å ikke ta varslene på alvor av den grunn.
@@ -409,7 +382,8 @@ Diagrammet viser hvordan komponentene vil henge sammen; applikasjonen vil kun ko
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{figs/Sekvensdiagram.png}
-\label{trafikkulykke}
+\label{sekvensdiagram}
+\caption{Sekvensdiagram}
 \end{figure}
 
 Dette sekvensdiagrammet illustrerer hvordan vi ser for oss at kommunikasjonen mellom leddene vil fungere. Applikasjonen vil sende en ruteforespørsel til en destinasjon, og tjeneren vil gi et gitt antall forslag som brukeren kan velge mellom. Dersom et hinder er oppdaget langs ruten spør man brukeren om han vil forsøke å unngå den veistrekningen. Tjeneren vil gi et nytt forslag dersom det er fornuftig, det vil være naturlig å sette en terskel for hvor lange omkjøringene vil være.
@@ -427,6 +401,7 @@ Tabellene med risikovurderinger gjort av en ekspert blir lagt opp som et beslutn
 \centering
 \includegraphics[scale=0.5]{figs/regioner.png}
 \label{trafikkulykke}
+\caption{Dårlig vær i området skaper større risiko}
 \end{figure}
 
 Denne regioninndelingen vil være mer presis i praksis, i eksempelet er inndelingen gjort for større regioner for illustrasjonshensikter.
@@ -437,6 +412,7 @@ Videre arbeid for å lage gode risikovurderinger kan ligge i å utforske Case-Ba
 \centering
 \includegraphics[scale=0.5]{figs/trafikkulykke.png}
 \label{trafikkulykke}
+\caption{Detaljer om trafikkulykker}
 \end{figure}
 
 Vi har ikke anledning til å utvikle prototyper for dette og vil derfor ta utgangspunkt i beslutningstrær som et første stadie for en god risikovurderingsalgoritme.
