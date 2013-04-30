@@ -15,7 +15,7 @@
 
 % Author
 % Fill in here, and use commands in the text. 
-\newcommand{\thesisAuthor}{Sania Ahktar\\Andreas Hagen\\Øystein Heimark\\Steffen Henriksen\\Øystein Hjelle\\Odd Andreas Sørsæther}
+\newcommand{\thesisAuthor}{Sania Ahktar\\Andreas Hagen\\Øystein Heimark\\Steffen Henriksen\\Eirik Hjelle\\Odd Andreas Sørsæther}
 \newcommand{\thesisTitle}{Det intelligente transportsystem }
 \newcommand{\thesisType}{Prosjektrapport - Eksperter i Team - Geokomai}
 \newcommand{\thesisDate}{Vår 2013}
@@ -108,11 +108,13 @@ Vi vil rette en takk til:
 
 \vfill
 
-\hfill \thesisAuthor
+%\hfil
+\noindent
+\thesisAuthor
 
 \hfill Trondheim, \today
 
-\clearpage
+\cleardoublepage
 
 \tableofcontents
 
@@ -127,13 +129,13 @@ Vi vil rette en takk til:
 Gruppen Geokomai består av seks studenter med ulik bakgrunn og kompetanse. To av studentene går Datateknikk, med spesialisering innenfor Intelligente Systemer, og studenten som går Informatikk har også sin fordypning innenfor samme felt. En av gruppmedlemmene 
 går Kommunikasjonsteknologi med fordypning innen Nett og Tjenester, den femte studenten har sin bakgrunn innenfor Teknisk Geofag, mens sistemann har geomatikkompetanse. 
 %Den største kontrasten ligger nok mest innenfor de to sistnevnte, da Datateknikk og Kommunikasjonsteknologi er to linjer som har mye til felles. 
-Ved valg av prosjektoppgave hadde vi i startfasen vanskeligheter med å finne en problemstilling som dekket alles felt. Etter hvert som samordning av ulike datakilder ble et alternativ, fant vi fort ut av at utformingen og arbeidet rundt vår applikasjon vil ha såpass mye bredde, at alles kompetanse ville spille en rolle.
+%Ved valg av prosjektoppgave hadde vi i startfasen vanskeligheter med å finne en problemstilling som dekket alles felt. Etter hvert som samordning av ulike datakilder ble et alternativ, fant vi fort ut av at utformingen og arbeidet rundt vår applikasjon vil ha såpass mye bredde, at alles kompetanse ville spille en rolle.
 
 Vårt applikasjonskonsept skal være til hjelp for reisende og vise nyttig informasjon.  Denne informasjonen kan være for eksempel sanntidsinformasjon for værdata, trafikkmeldinger, trafikkuhell, trafikktetthet, ras, fergeavganger og tilsvarende. Målet er å koordinere informasjon fra flere forskjellige kilder, og prosjektet vil ta for seg hvilke kilder som er mest relevante. Vi har blant annet sett på trafikkmeldinger om trafikkflyt,  trafikkonsentrasjon fra NVDB og vegvesenet, veibaneforhold fra yr.no, historiske viltpåkjørsler fra Direktoratet for naturforvaltning og informasjon om Ras og flomutsatte veistrekninger fra NVE i samarbeid med vegvesenet og Metrologisk Institutt.
 	
 Når data er samlet vil det bli undersøkt hvordan det bør presenteres til brukeren på en oversiktlig måte. Målet er å filtrere informasjonen og bare vise informasjon som er relevant for den gjeldende brukeren, basert på for eksempel posisjon og rute. Vi ønsker å presentere for brukeren en risikoprofil for den veistrekningen de befinner seg på i sanntid.
 
-Denne rapporten vil være et forarbeid til en slik applikasjon, og målet er å undersøke hvilke informasjonskilder som finnes og hvordan disse kan integreres til en felles løsning. Sluttresultatet vil være en rapport med forslag til et brukergrensesnitt. 
+Denne rapporten vil være et forarbeid til en slik applikasjon, og målet er å undersøke hvilke informasjonskilder som finnes og hvordan disse kan integreres til en felles løsning. Sluttresultatet vil være en rapport med forslag til et brukergrensesnitt.
 
 \chapter{ Analyse av eksisterende løsninger}\label{T-B}
 \label{cha:TheoryAndBackground}
@@ -382,25 +384,35 @@ For å oppfylle våre funksjonelle krav til applikasjonen har vi ikke bare vært
 
 Grunnet begrenset regnekraft på mobilenheter vil mesteparten av utregningene måtte gjøres på et sentralt system plassert på en server. En annen fordel med dette er at datatrafikken ut og inn fra mobilen blir begrenset, da hastigheten i mobilnettet ikke er like høyt rundt om i landet. Applikasjonen vil dermed få ett enkelt kontaktpunkt å forholde seg til. Det sentrale systemet vil få ansvar for å samle inn informasjon fra de forskjellige kildene, koordinere dem, gjøre utregninger og gjøre alt dette tilgjengelig for eksterne applikasjoner.
 
-[Diagram som viser alle datatilbydere med pil mot server, server har pil mot telefonene. Steffen har denne]
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.25]{figs/ark.png}
+\label{fig:ark1}
+\caption{Dataene samles}
+\end{figure}
 
-Diagrammet viser hvordan komponentene vil henge sammen; applikasjonen vil kun kommunisere med tjeneren, og tjeneren vil videre be om informasjon fra andre datakilder og mellomlagre disse for å redusere mengden datatrafikk. Etter en gitt tid vil tjeneren ta kontakt for å oppdatere sine data, og det vil være naturlig å variere dette intervallet etter hva slags data man ønsker informasjon om. Rasfarevurderinger fra NVE vil for eksempel ikke være nødvendig å oppdatere like ofte som trafikkmeldinger fra Vegvesenet.
+Diagrammet i figur ~\ref{fig:ark1} viser hvordan komponentene vil henge sammen; applikasjonen vil kun kommunisere med tjeneren, og tjeneren vil videre be om informasjon fra andre datakilder og mellomlagre disse for å redusere mengden datatrafikk. Etter en gitt tid vil tjeneren ta kontakt for å oppdatere sine data, og det vil være naturlig å variere dette intervallet etter hva slags data man ønsker informasjon om. Rasfarevurderinger fra NVE vil for eksempel ikke være nødvendig å oppdatere like ofte som trafikkmeldinger fra Vegvesenet.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{figs/Sekvensdiagram.png}
-\label{sekvensdiagram}
+\label{fig:sekvensdiagram}
 \caption{Sekvensdiagram}
 \end{figure}
 
-Dette sekvensdiagrammet illustrerer hvordan vi ser for oss at kommunikasjonen mellom leddene vil fungere. Applikasjonen vil sende en ruteforespørsel til en destinasjon, og tjeneren vil gi et gitt antall forslag som brukeren kan velge mellom. Dersom et hinder er oppdaget langs ruten spør man brukeren om han vil forsøke å unngå den veistrekningen. Tjeneren vil gi et nytt forslag dersom det er fornuftig, det vil være naturlig å sette en terskel for hvor lange omkjøringene vil være.
+Sekvensdiagrammet i figur ~\ref{fig:sekvensdiagram} illustrerer hvordan vi ser for oss at kommunikasjonen mellom leddene vil fungere. Applikasjonen vil sende en ruteforespørsel til en destinasjon, og tjeneren vil gi et gitt antall forslag som brukeren kan velge mellom. Dersom et hinder er oppdaget langs ruten spør man brukeren om han vil forsøke å unngå den veistrekningen. Tjeneren vil gi et nytt forslag dersom det er fornuftig, det vil være naturlig å sette en terskel for hvor lange omkjøringene vil være.
 Tjeneren tar kontakt med andre tjenester dersom de mellomlagrede dataene er gamle nok. Hvor lang tid det går mellom hver spørring vil man se mer nøye på etter hvert som applikasjonen er klar for testing.
 Underveis i kjøringen vil applikasjonen spørre om oppdateringer, og det vil være en god løsning å la dette skje oftere dersom brukeren kjører vekk fra den planlagte ruten.
 
 Risikovurdering
 Risikovurderingen i applikasjonen kan løses med variende grad av kompleksitet. Uten å utvikle prototyper er det vanskelig å undersøke hvilke løsninger som vil fungere, men vårt utgangspunkt i denne rapporten vil være en enkel metode som bruker beslutningstrær.
 
-[DECISION TREE-diagram fra presentasjonen]
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{figs/decision.png}
+\label{desicion}
+\caption{Et eksempel på et beslutningstre.}
+\end{figure}
 
 Tabellene med risikovurderinger gjort av en ekspert blir lagt opp som et beslutningstre som tjeneren vår går igjennom for å gjøre en totalvurdering. Vi har for eksempel værdata, rasfarevurderinger og historiske dyrepåkjørsler som kan overlappes for å avgjøre den totale risikoen i større regioner. Illustrasjonen under viser et eksempel hvor dårlig vær i et større område skaper “grønn” risiko, mens informasjon om rasfare og dyrepåkjørsler legges over disse for å skape “gul” eller “rød” risiko.
 
