@@ -49,7 +49,8 @@
 %Title page (This is generate automatically from the commands above)
 \begin{titlepage}
 \noindent {\large \textbf{\thesisAuthor}}
-\vspace{2cm}
+%\vspace{2cm}
+\vspace{3cm}
 
 \noindent {\Huge \thesisTitle}
 \vspace{2cm}
@@ -124,11 +125,13 @@ Vi vil rette en takk til:
 \chapter{Innledning}
 \label{cha:Introduction}
 Gruppen Geokomai består av seks studenter med ulik bakgrunn og kompetanse. To av studentene går Datateknikk, med spesialisering innenfor Intelligente Systemer, og studenten som går Informatikk har også sin fordypning innenfor samme felt. En av gruppmedlemmene 
-går Kommunikasjonsteknologi med fordypning innen Nett og Tjenester, den femte studenten har sin bakgrunn innenfor Teknisk Geofag, mens sistemann har Geomatikkompetanse. Den største kontrasten ligger nok mest innenfor de to sistnevnte, da Datateknikk og Kommunikasjonsteknologi er to linjer som har mye til felles. Ved valg av prosjektoppgave hadde vi i startfasen vanskeligheter med å finne en problemstilling som dekket alles felt. Men etter hvert som samordning av ulike kilder og data ble et alternativ, fant vi fort ut av at utformingen og arbeidet rundt vår applikasjon vil ha såpass mye bredde, at alles kompetanse ville spille en rolle.
+går Kommunikasjonsteknologi med fordypning innen Nett og Tjenester, den femte studenten har sin bakgrunn innenfor Teknisk Geofag, mens sistemann har geomatikkompetanse. 
+%Den største kontrasten ligger nok mest innenfor de to sistnevnte, da Datateknikk og Kommunikasjonsteknologi er to linjer som har mye til felles. 
+Ved valg av prosjektoppgave hadde vi i startfasen vanskeligheter med å finne en problemstilling som dekket alles felt. Etter hvert som samordning av ulike datakilder ble et alternativ, fant vi fort ut av at utformingen og arbeidet rundt vår applikasjon vil ha såpass mye bredde, at alles kompetanse ville spille en rolle.
 
-Vårt applikasjonskonsept skal være til hjelp for reisende og vise nyttig informasjon.  Denne informasjonen kan være for eksempel sanntidsinformasjon for værdata, trafikkmeldinger, trafikkuhell, trafikktetthet, ras, fergeavganger og tilsvarende. Målet er å koordinere informasjon fra flere forskjellige kilder, og prosjektet vil ta for seg hvilke kilder som er mest relevante. Trafikkmeldinger om trafikkflyt,  trafikkonsentrasjon fra NVDB og vegvesenet, veibaneforhold fra yr.no, historiske viltpåkjørsler fra Direktoratet for naturforvaltning. Ras og flomutsatte veistrekninger fra NVE i samarbeid med vegvesenet og Metrologisk Institutt.
+Vårt applikasjonskonsept skal være til hjelp for reisende og vise nyttig informasjon.  Denne informasjonen kan være for eksempel sanntidsinformasjon for værdata, trafikkmeldinger, trafikkuhell, trafikktetthet, ras, fergeavganger og tilsvarende. Målet er å koordinere informasjon fra flere forskjellige kilder, og prosjektet vil ta for seg hvilke kilder som er mest relevante. Vi har blant annet sett på trafikkmeldinger om trafikkflyt,  trafikkonsentrasjon fra NVDB og vegvesenet, veibaneforhold fra yr.no, historiske viltpåkjørsler fra Direktoratet for naturforvaltning og informasjon om Ras og flomutsatte veistrekninger fra NVE i samarbeid med vegvesenet og Metrologisk Institutt.
 	
-Når data er samlet vil det bli undersøkt hvordan det bør presenteres til brukeren på en oversiktlig måte. Målet er å filtrere informasjonen og bare vise informasjon som er relevant for den gjeldende brukeren, basert på for eksempel posisjon og rute. Vi ønsker å presentere brukeren en risikoprofil for den veistrekningen de befinner seg på i sanntid.
+Når data er samlet vil det bli undersøkt hvordan det bør presenteres til brukeren på en oversiktlig måte. Målet er å filtrere informasjonen og bare vise informasjon som er relevant for den gjeldende brukeren, basert på for eksempel posisjon og rute. Vi ønsker å presentere for brukeren en risikoprofil for den veistrekningen de befinner seg på i sanntid.
 
 Denne rapporten vil være et forarbeid til en slik applikasjon, og målet er å undersøke hvilke informasjonskilder som finnes og hvordan disse kan integreres til en felles løsning. Sluttresultatet vil være en rapport med forslag til et brukergrensesnitt. 
 
@@ -251,14 +254,14 @@ Det ble tidlig klart at Meterologisk Institutt var den kilden som passet våre b
  Skred er en årsak til både forsinkelser og ulykker. Vi håper å kunne gi sjåføren en bedre og mer nøyaktig form for varsling av rasutsatte områder ved å hente oppdatert og tidsrelevant informasjon og analysere disse for brukeren. Skredfareskiltene som står langs veien tar ikke høyde for varierende risiko i ulike sesonger eller værforhold, og heller ikke typen skred, og det kan derfor være lett å ikke ta varslene på alvor av den grunn.
     Vi har sett på en del datakilder som er relevant for skred- og flomvarsling for å finne ut hva slags data de tilbyr, og hvor enkle disse er å ta i bruk for applikasjonsutviklere. Vi forventet å finne data om skred som har gått og blokkerer veibanen, samt vurdering av rasfaren i områdene som ligger langs veien. En epost-korrespondanse med en ansatt i NVE gjorde oss oppmerksom på at informasjon om skred som har gått er tilgjengelig hos vegvesenet. Vi har derfor justert forventningene våre, og ser etter datakilder som tilbyr rasfarevurdering og historiske data.
     Ras- og flomfare vil typisk være noe som gjelder for et stort område, og er ikke noe som kun er relevant for trafikken. Et par potensielle løsninger for å binde sammen datakilder vil være å enten kunne identifisere hvilken region en veistrekning tilhører, eller å identifisere hvilken region et koordinat tilhører. På denne måten kan man gå igjennom alle veistrekningene i en planlagt rute og finne rasfarevurderingen til disse basert på regionene de befinner seg i.
-	Vi startet letingen etter datakilder på Norges Vassdrags- og Energidirektorat (heretter NVE), som tilbyr meget detaljerte kart på sine nettsteder for det meste innen ras og flom. (fotnote) Dessverre viste det seg fort at datatilgangen ikke var like god; foreløpig er det kun mulig å hente data om snøskredfare i 24 fjellområder rundt om i Norge. Da vi tok kontakt med NVE og stilte et par spørsmål rundt deres API-støtte fikk vi beskjed om at det var planer om å tilby jordskredfare og flomvarsling i løpet av sommeren 2013. NVE lar oss filtrere data etter regioner og koordinater og er derfor godt egnet for integrering i en applikasjon.
-	Andre tjenester vi så på underveis viste seg å bruke NVE som kilde for sine tjenester. Nettstedet Yr har et kart for snøskredfare som er avhengig av data fra nettstedet Varsom.no, som igjen henter sine data fra NVE. Skrednett (fotnote) er et nettsted som har data om både flom og ras, og er resultatet av et samarbeid mellom NVE og NGU (Norges Geologiske Undersøkelse)(fotnote). Disse tre nettstedene tilbyr ikke løsninger for applikasjonsutviklere, man må i stedet gå direkte igjennom NVE.
+	Vi startet letingen etter datakilder på Norges Vassdrags- og Energidirektorat (heretter NVE), som tilbyr meget detaljerte kart på sine nettsteder for det meste innen ras og flom.\cite{nve}  Dessverre viste det seg fort at datatilgangen ikke var like god; foreløpig er det kun mulig å hente data om snøskredfare i 24 fjellområder rundt om i Norge. Da vi tok kontakt med NVE og stilte et par spørsmål rundt deres API-støtte fikk vi beskjed om at det var planer om å tilby jordskredfare og flomvarsling i løpet av sommeren 2013. NVE lar oss filtrere data etter regioner og koordinater og er derfor godt egnet for integrering i en applikasjon.
+	Andre tjenester vi så på underveis viste seg å bruke NVE som kilde for sine tjenester. Nettstedet Yr har et kart for snøskredfare som er avhengig av data fra nettstedet Varsom.no, som igjen henter sine data fra NVE.\cite{varsom} Skrednett \cite{skred} er et nettsted som har data om både flom og ras, og er resultatet av et samarbeid mellom NVE og NGU (Norges Geologiske Undersøkelse)\cite{ngu}. Disse tre nettstedene tilbyr ikke løsninger for applikasjonsutviklere, man må i stedet gå direkte igjennom NVE.
 	Den andre datakilden vi fant som var relevant for ras var Norges Geologiske Undersøkelse (heretter NGU), som også tilbyr geologiske kart samt topografiske kart fra Statens kartverk og historiske skred samlet fra forskjellige kilder. Her er derimot dataene kun tilgjengelige for nedlasting i form av spesielt tilpassede dataformater som ESRI og SOSI.  Dersom disse dataene skal benyttes må man skrive spesialisert kode for å både laste ned og tolke dataene. Vi skulle ønsket en mer brukervennlig løsning for applikasjonsutviklere.
 
 Statens veivesen og Jernbaneverket har i samarbeid med NVE og met.no fremstilt ulike fareindekser basert på griddede vær-og snødata fra senorge.no
 Fareindeksene er basert på statistiske sammenhenger og bruk av terskelverdier for ulike kombinasjoner av parametere. 
 
-xGeo (fotnote) innholder produksjon av data og formidling av resultater som kommer ut av dette samarbeidet og er et ekspertverktøy som brukes til beredskap, overvåking og varsling av flom, jordskred og snøskred. Med kart og tid som utgangspunkt sammenstilles data fra stasjoner og modeller med hendelser og feltobservasjoner. Dessverre er det ikke mulig for oss å ta i bruk dataene i applikasjonen, fordi dataene til nå kun kan presenteres visuelt og vil derfor være vanskelig å tolke for en maskin.
+xGeo innholder produksjon av data og formidling av resultater som kommer ut av dette samarbeidet og er et ekspertverktøy som brukes til beredskap, overvåking og varsling av flom, jordskred og snøskred.\cite{xgeo} Med kart og tid som utgangspunkt sammenstilles data fra stasjoner og modeller med hendelser og feltobservasjoner. Dessverre er det ikke mulig for oss å ta i bruk dataene i applikasjonen, fordi dataene til nå kun kan presenteres visuelt og vil derfor være vanskelig å tolke for en maskin.
 	Norges veidatabank (NVDB) tilbyr også data om skred som har gått. Her ser man historiske data, men NVDB tilbyr ingen risikovurdering. Det at et område har opplevd skred er en indikasjon på at det kan komme flere om man bare har en langt nok perspektiv.  Historiske skred uten annen informasjon kan ikke si så mye om den generelle rasfaren i området, men man kan allikevel bruke disse dataene for å vurdere rasfaren dersom et område opplever mange skred over en periode. NVDB er en datakilde som ble tilgjengelig underveis i dette prosjektet, og det har derfor ikke blitt undersøkt like grundig.
 
 Basert på våre undersøkelser ser det ut til at NVE er den eneste gode datakilden vi har for ras- og flomfare, og disse dataene kan brukes som en del av risikoprofilen for veistrekninger. For skred som allerede har gått må man igjennom vegvesenet sin database NVDB, da generelle hendelser på veien rapporteres hos disse, men NVE har også et eget system hvor brukere kan varsle NVE dersom de oppdager et skred. I følge NVE selv vil man ikke kunne være avhengig av kun dette verktøyet, da “det vil gå mange skred som ikke [rapporteres der]”[1].
@@ -288,7 +291,7 @@ Det finnes gratis programvare for decoding og parsing av AIS-formatet som gjør 
 Det vil være trivielt å hente ut dataene som trengs for gjøre anslag om fergeankomst til kai. Disse dataene er offentlig tilgjengelig og kan nås gjennom godt tilrettelagte API-er som inneholder mer funksjonalitet enn det som er nødvendig for applikasjonen.
 
 
-\chapter{Undersøkelse av relevante teknologier og metoder}
+\chapter{Relevante teknologier og metoder}
 \label{cha:ResearchAndResults}
 
 {\it Vår app har som mål å presentere brukeren med et totalbilde av trafikken i sanntid, i tillegg til en risikovurdering av strekninger langs en rute. For å kunne oppnå dette og presentere brukere med oppdatert og nyttig informasjon om trafikken, er vi avhengig av å hente og koordinere informasjon fra mange forskjellige kilder. For oss er det derfor viktig å finne ut hvordan vi skal klare å samle inn oppdatert informasjon, som senere kan behandles og presenteres til brukeren. Ved å undersøke lignende løsninger både i Norge og internasjonalt har vi funnet frem til at det finnes to rådende metoder for å samle inn informasjon fra trafikken på; aggregering og crowdsourcing. }
@@ -324,8 +327,11 @@ Prosedyre for risikodiagram:
 \end{enumerate}
 
 Ved å rangere en gitt hendelse for skadeomfang/konsekvens mot sannsynligheten for at hendelsen faktisk skjer kan man ved enkel summering finne RPN-verdien (Risk Priority Number) for oppgaven som skal bli utført. Man overfører altså virkelighetsbeskrivelser til tall.  
+
 (FIGUR)
+
 Her er et eksempel på hvordan et punkt langs kjøreruten til Støren fra Trondheim kan se ut. “Hva om/Hvis dette skjer?” Hvilke årsaker kan det ha? Fra dette blir RPN-verdien estimert for hver enkel mulig årsak for et uhell. Når samtlige RPN-verdier er estimert kan det dannes et bilde av hvilke farer som er mest risikofylte. På eksemplet ser man at mørket, is, snø og flom med RPN-verdi 8 og 9 slår ut som farlige situasjonsbeskrivende årsaker for et eventuelt uhell, når det gjelder sikt og glatt veibane en våt vårnatt.
+
 Hvilke og hvordan disse tallene som skal bli presentert til brukeren av systemet er kanskje noe av det mer krevende arbeidet som må utledes. Når en risiko øker kan andre risikofaktorer øke proporsjonalt. For eksempel kan nysnø sammen med høy snømengde gjøre at veiene ikke er brøytet, og samtidig kan viltdyr trekke ned i veien og skape trafikkfarlige situasjoner. Hvem av disse er det som kan være av størst betydning? Det er mange forskjellige situasjoner som må tas hensyn til langs veistrekningen. Hvilke er mest relevant for brukeren?
 
 Viktige kilder blir å implementere ras og flom data fra samarbeidet mellom NVE, Statens veivesen og Meteorologisk institutt. Kolonnekjøring og strøing av veiene fra NVDB og Statens veivesen. Veiforhold med hensyn på data fra meteorologisk institutt gjennom yr.no, farlige områder med historiske data av viltpåkjørsler (om hjorteviltregisteret gav API på fallvilt, påkjørte dyr). Trafikktetthet og historiske data fra aktører som Falcken og Statens veivesen. Sikt, værforhold og andre kilder kan skaffes gjennom crowdsourcing eller andre aktører.
@@ -338,6 +344,7 @@ Utfordringen for å gjøre dette til et intelligent transportsystem blir å finn
 Et sentralt problem i vår idé vil være å aggregere informasjonen som er tilgjengelig til enhver tid og sørge for at kun data som er relevant blir vist til brukere og tatt med i betraktningen.  For å løse dette ønsker vi å bruke klassifiseringsteknikker fra fagfeltet kunstig intelligens. I denne delen vil vi skrive litt om hva klassifisering er, hvilke kjente teknikker vi ser på som relevante og til slutt ta for oss hvilke problemer og utfordringer denne løsningen byr på.
 
 Klassifisering er et problem hvor en funksjon f tar som parametre et endelig sett med verdier og har som funksjonsverdi y én av elementene i et endelig sett.\cite{norvig} I vårt tilfelle vil for eksempel parameterne (regn, tidligere ulykke, tåke) gi funksjonsverdien “høy” som da angir risikoprofilen for en gitt veistrekning. Hvis y er et tall kalles klassifisering teknisk sett regresjon, noe som kan være relevant hvis man ønsker å bruke parametrene til å angi en sannsynlighet for at noe inntreffer, som om en flom vil inntreffe på veistrekningen mens man kjører på den.
+
 Klassifiseringer er et sentralt problem innenfor kunstig intelligens. Den generelle metoden som benyttes bruker maskinlæringsteknikker som utnytter et sett med treningsdata. Klassifiseringen blir gitt sammen med parametrene og læringsalgoritmen som blir brukt lærer seg å generalisere over dataene for å kunne ta generelle beslutninger basert på parametre den ikke har sett før. Læringen vil i mange tilfeller kunne fortsette etter at systemet er tatt i bruk i tilfeller hvor systemet kan få tilbakemeldinger på om det utførte en riktig klassifisering. I vårt tilfelle vil systemet for eksempel kunne utvides til å ta hensyn til nye datakilder ved at systemet kartlegger parametrene i nye ulykker.	
 
 \subsection{K-nærmeste naboer}
@@ -349,7 +356,7 @@ Den største utfordringen ved å implementere et slikt system ligger i at trenin
 \chapter{Forslag til implementasjon}
 \label{cha:implementasjon}
 
-{\it HER HADDE DET VÆRT JÆVLIG FINT MED EN INTRODUKSJON }
+{\it I denne delen vil vi kort redgjøre for hvordan vi ser for oss at applikasjonen kan settes sammen. Vi vil først redgjøre for valg av plattform og deretter kort foreslå en overordnet løsning.}
 
 \section{Smarttelefon - Hvorfor?}
 \label{sec:smarttelefon}
@@ -360,18 +367,18 @@ En smarttelefon er enkel å ha med seg i bilen, de fleste har den med seg overal
 
 Kort oppsummert har vi har valgt denne teknologien fordi den bidrar til at løsningen vår vil være tilgjengelig for et stort antall brukere, og samtidig vil den bidra til å holde utviklingskostnadene nede.
 
-\section{User Stories}
-\label{sec:ustories}
-For å skape en oversikt over hvilke funksjoner vi ønsket at appen vår skulle inneholde bestemte vi oss tidlig for å lage user stories. Figuren under viser de funksjonene som vår gruppe ønsket å se i en slik applikasjon.
-
-(FIGUR)
-
-Hver user story beskriver en ønsket funksjon på en ikke-teknisk måte, fortalt av en person som skal bruke systemet. Denne uformelle kravspesifikasjonen var med å sette krav til datakildene, og hjalp oss med å utforme en systembeskrivelse.
+%\section{User Stories}
+%\label{sec:ustories}
+%For å skape en oversikt over hvilke funksjoner vi ønsket at appen vår skulle inneholde bestemte vi oss tidlig for å lage user stories. Figuren under viser de funksjonene som vår gruppe ønsket å se i en slik applikasjon.
+%
+%(FIGUR)
+%
+%Hver user story beskriver en ønsket funksjon på en ikke-teknisk måte, fortalt av en person som skal bruke systemet. Denne uformelle kravspesifikasjonen var med å sette krav til datakildene, og hjalp oss med å utforme en systembeskrivelse.
 
 \section{Systembeskrivelse}
 \label{sec:Systembeskrivelse}
 
-For å oppfylle ønskene i delkapittelet over har vi ikke bare vært nødt til å se på datakilder og tjenester som kan hjelpe oss, vi har også vært nødt til å ha en diskusjon om hvordan alle elementene kan bindes sammen. Dette avsnittet vil vise vår visjon for hvordan systemet vil kunne henge sammen.
+For å oppfylle våre funksjonelle krav til applikasjonen har vi ikke bare vært nødt til å se på datakilder og tjenester som kan hjelpe oss, vi har også vært nødt til å ha en diskusjon om hvordan alle elementene kan bindes sammen. Dette avsnittet vil vise vår visjon for hvordan systemet vil kunne henge sammen.
 
 Grunnet begrenset regnekraft på mobilenheter vil mesteparten av utregningene måtte gjøres på et sentralt system plassert på en server. En annen fordel med dette er at datatrafikken ut og inn fra mobilen blir begrenset, da hastigheten i mobilnettet ikke er like høyt rundt om i landet. Applikasjonen vil dermed få ett enkelt kontaktpunkt å forholde seg til. Det sentrale systemet vil få ansvar for å samle inn informasjon fra de forskjellige kildene, koordinere dem, gjøre utregninger og gjøre alt dette tilgjengelig for eksterne applikasjoner.
 
@@ -461,7 +468,7 @@ Konklusjonen vi har kommet til er at en applikasjon med funksjonaliteten vi øns
 \bibliographystyle{plain}
 \bibliography{bibliography}
 
-\addcontentsline{toc}{chapter}{Bibliography}
+\addcontentsline{toc}{chapter}{Referanser}
 %\bibliography{bibtex/bibliography}
 
 
