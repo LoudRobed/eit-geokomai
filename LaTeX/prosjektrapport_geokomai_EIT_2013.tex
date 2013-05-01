@@ -98,9 +98,9 @@ Denne rapporten leveres som en del av faget TDT4853 - “Eksperter i Team” ved
 
 Vi vil rette en takk til:
 \begin{itemize}	
-\item Pauline Haddow, landsbyleder
-\item Eivind Myklebust Lindseth, studentassistent
-\item Edel Gustavsen Holand, studentassistent
+\item[--] Pauline Haddow, landsbyleder
+\item[--] Eivind Myklebust Lindseth, studentassistent
+\item[--] Edel Gustavsen Holand, studentassistent
 \end {itemize}
 
 
@@ -211,7 +211,7 @@ Waze er laget av et israelsk selskap og er en meget populær app som brukes over
 \caption{I Waze er det også mulig å sammenligne ruter}
 \end{figure}
 
-Waze genererer både automatiske rapporter med bakgrunn i beveielsene til brukeren og manuelle rapporter som er lagt inn av brukere. De automatiske rapportene genereres ved å blant annet overvåke brukerens hastighet. Hvis man registrerer at brukeren forflytter seg saktere enn den gjeldende fartsgrensen på veien, vil det genereres en rapport om kø i dette området. Man har mulighet for å gi tilbakemelding på rapporter fra andre brukere, ved å enten godkjenne dem eller gi beskjed om at problemet ikke lenger er der. På denne måten vil trafikkmeldingene til en hver tid være oppdatert.
+Waze genererer både automatiske rapporter med bakgrunn i beskrivelsene til brukeren og manuelle rapporter som er lagt inn av brukere. De automatiske rapportene genereres ved å blant annet overvåke brukerens hastighet. Hvis man registrerer at brukeren forflytter seg saktere enn den gjeldende fartsgrensen på veien, vil det genereres en rapport om kø i dette området. Man har mulighet for å gi tilbakemelding på rapporter fra andre brukere, ved å enten godkjenne dem eller gi beskjed om at problemet ikke lenger er der. På denne måten vil trafikkmeldingene til en hver tid være oppdatert.
 
 \begin{figure}[H]
 \centering
@@ -249,7 +249,8 @@ Yr.no har tilgjengeliggjort all sin data via et åpent API,\cite{yr} som gjør a
 Meterologisk institutt tilbyr mye de samme dataene som yr.no, og har også et eget API man kan kommunisere med.\cite{met} Forskjellen er at Meterologisk Institutt tilbyr større mengder data som i tillegg er mer detaljerte. Her kan man hente ut informasjon om alt fra skogbrannsfare til bølgehøyde i tillegg til detaljerte værvarsler. Man kan til og med hente hvor stor sannsynligheten for at et gitt værvarsel slår til. Informasjonen som er tilgjengelig er hentet fra værstasjoner som er plassert rundt om i Norge. Informasjonen er gjort tilgjengelig via et REST API og blir returnert i XML format.
 
 \subsection{Storm.no}
-Storm.no tilbyr dessverre ikke et åpent API for å hente ut data. De tilbyr derimot en tjeneste som ligner litt på det vi har tenkt å levere, nemlig trafikkvær. Her kan man planlegge en rute på et kart og få opp en værmelding langs denne ruten. På kartet er det også lagt inn veimeldinger. Vi kan dessverre ikke bruke denne tjenesten i vår applikasjon da det ikke er gjort tilgjengelig via et åpent API, men det viser at det er mulig og at det finnes interesse for slik informasjon blant det norske folk.
+Storm.no tilbyr dessverre ikke et åpent API for å hente ut data. De tilbyr derimot en tjeneste som ligner litt på det vi har tenkt å levere, nemlig trafikkvær. Her kan man planlegge en rute på et kart og få opp en værmelding langs denne ruten. På kartet er det også lagt inn veimeldinger. Vi kan dessverre ikke bruke denne tjenesten i vår applikasjon da det ikke er gjort tilgjengelig via et åpent API, men det viser at det er mulig og at det finnes interesse for slik informasjon blant det norske folk.\\
+\newline
 Det ble tidlig klart at Meterologisk Institutt var den kilden som passet våre behov best. Det tilbyr store mengder detaljerte data som er åpent og lett tilgjengelig via et REST API som enkelt kan kommunisere med vår tenkte applikasjon. I tillegg henter man informasjon basert på GPS posisjoner, noe som passer bra med tanke på at vi til en hver tid har tilgang til GPS posisjonen til brukeren gjennom bruken av smarttelefoner.\cite{storm}
 
 \section{Ras og Flom}
@@ -266,7 +267,7 @@ Fareindeksene er basert på statistiske sammenhenger og bruk av terskelverdier f
 xGeo innholder produksjon av data og formidling av resultater som kommer ut av dette samarbeidet og er et ekspertverktøy som brukes til beredskap, overvåking og varsling av flom, jordskred og snøskred.\cite{xgeo} Med kart og tid som utgangspunkt sammenstilles data fra stasjoner og modeller med hendelser og feltobservasjoner. Dessverre er det ikke mulig for oss å ta i bruk dataene i applikasjonen, fordi dataene til nå kun kan presenteres visuelt og vil derfor være vanskelig å tolke for en maskin.
 	Norges veidatabank (NVDB) tilbyr også data om skred som har gått. Her ser man historiske data, men NVDB tilbyr ingen risikovurdering. Det at et område har opplevd skred er en indikasjon på at det kan komme flere om man bare har en langt nok perspektiv.  Historiske skred uten annen informasjon kan ikke si så mye om den generelle rasfaren i området, men man kan allikevel bruke disse dataene for å vurdere rasfaren dersom et område opplever mange skred over en periode. NVDB er en datakilde som ble tilgjengelig underveis i dette prosjektet, og det har derfor ikke blitt undersøkt like grundig.
 
-Basert på våre undersøkelser ser det ut til at NVE er den eneste gode datakilden vi har for ras- og flomfare, og disse dataene kan brukes som en del av risikoprofilen for veistrekninger. For skred som allerede har gått må man igjennom vegvesenet sin database NVDB, da generelle hendelser på veien rapporteres hos disse, men NVE har også et eget system hvor brukere kan varsle NVE dersom de oppdager et skred. I følge NVE selv vil man ikke kunne være avhengig av kun dette verktøyet, da “det vil gå mange skred som ikke [rapporteres der]”[1].
+Basert på våre undersøkelser ser det ut til at NVE er den eneste gode datakilden vi har for ras- og flomfare, og disse dataene kan brukes som en del av risikoprofilen for veistrekninger. For skred som allerede har gått må man igjennom vegvesenet sin database NVDB, da generelle hendelser på veien rapporteres hos disse, men NVE har også et eget system hvor brukere kan varsle NVE dersom de oppdager et skred. I følge NVE selv vil man ikke kunne være avhengig av kun dette verktøyet, da “det vil gå mange skred som ikke [rapporteres der]”\cite{nve}
 
 \section{Ruteplanlegging}
 Ruteplanlegging er bindeleddet i systemet. En bruker bør kun få informasjon om rutene de kjører på, og for å motta den informasjonen må man først og fremst kunne definere en rute. Når man har planlagt en rute vil det være enklere å vite om en rapportert ulykke vil hindre fremkommeligheten til brukeren. I dette kapittelet har vi sett på ruteplanleggere som er tilgjengelig via webtjenester. Vi har valgt å ikke dokumentere frakoblede løsninger, delvis på grunn av at forutsetningen for at sanntidsvarslingen i systemet fungerer er at man er koblet til internett.
@@ -330,12 +331,32 @@ Prosedyre for risikodiagram:
 
 Ved å rangere en gitt hendelse for skadeomfang/konsekvens mot sannsynligheten for at hendelsen faktisk skjer kan man ved enkel summering finne RPN-verdien (Risk Priority Number) for oppgaven som skal bli utført. Man overfører altså virkelighetsbeskrivelser til tall.  
 
-(FIGUR)
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.25]{figs/risiko1}
+\label{fig:risiko1}
+\caption{Risikodiagram for ruten Trondheim - Støren}
+\end{figure}
 
-Her er et eksempel på hvordan et punkt langs kjøreruten til Støren fra Trondheim kan se ut. “Hva om/Hvis dette skjer?” Hvilke årsaker kan det ha? Fra dette blir RPN-verdien estimert for hver enkel mulig årsak for et uhell. Når samtlige RPN-verdier er estimert kan det dannes et bilde av hvilke farer som er mest risikofylte. På eksemplet ser man at mørket, is, snø og flom med RPN-verdi 8 og 9 slår ut som farlige situasjonsbeskrivende årsaker for et eventuelt uhell, når det gjelder sikt og glatt veibane en våt vårnatt.
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.25]{figs/ark.png}
+%\label{fig:ark1}
+%\caption{Dataene samles}
+%\end{figure}
+
+\noindent
+I figur ~\ref{fig:risiko1} vises et eksempel på hvordan et punkt langs kjøreruten til Støren fra Trondheim kan se ut. “Hva om/Hvis dette skjer?” Hvilke årsaker kan det ha? Fra dette blir RPN-verdien estimert for hver enkel mulig årsak for et uhell. Når samtlige RPN-verdier er estimert kan det dannes et bilde av hvilke farer som er mest risikofylte. På eksemplet ser man at mørket, is, snø og flom med RPN-verdi 8 og 9 slår ut som farlige situasjonsbeskrivende årsaker for et eventuelt uhell, når det gjelder sikt og glatt veibane en våt vårnatt.
 
 Hvilke og hvordan disse tallene som skal bli presentert til brukeren av systemet er kanskje noe av det mer krevende arbeidet som må utledes. Når en risiko øker kan andre risikofaktorer øke proporsjonalt. For eksempel kan nysnø sammen med høy snømengde gjøre at veiene ikke er brøytet, og samtidig kan viltdyr trekke ned i veien og skape trafikkfarlige situasjoner. Hvem av disse er det som kan være av størst betydning? Det er mange forskjellige situasjoner som må tas hensyn til langs veistrekningen. Hvilke er mest relevant for brukeren?
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{figs/risiko2}
+\label{fig:risiko1}
+%\caption{Risikodiagram for ruten Trondheim - Støren}
+\end{figure}
+\noindent
 Viktige kilder blir å implementere ras og flom data fra samarbeidet mellom NVE, Statens veivesen og Meteorologisk institutt. Kolonnekjøring og strøing av veiene fra NVDB og Statens veivesen. Veiforhold med hensyn på data fra meteorologisk institutt gjennom yr.no, farlige områder med historiske data av viltpåkjørsler (om hjorteviltregisteret gav API på fallvilt, påkjørte dyr). Trafikktetthet og historiske data fra aktører som Falcken og Statens veivesen. Sikt, værforhold og andre kilder kan skaffes gjennom crowdsourcing eller andre aktører.
 
 Utfordringen for å gjøre dette til et intelligent transportsystem blir å finne skillekriterier mellom forskjellige farer og hvordan veie de opp mot hverandre gjennom maskinlæring.
@@ -345,12 +366,12 @@ Utfordringen for å gjøre dette til et intelligent transportsystem blir å finn
 
 Et sentralt problem i vår idé vil være å aggregere informasjonen som er tilgjengelig til enhver tid og sørge for at kun data som er relevant blir vist til brukere og tatt med i betraktningen.  For å løse dette ønsker vi å bruke klassifiseringsteknikker fra fagfeltet kunstig intelligens. I denne delen vil vi skrive litt om hva klassifisering er, hvilke kjente teknikker vi ser på som relevante og til slutt ta for oss hvilke problemer og utfordringer denne løsningen byr på.
 
-Klassifisering er et problem hvor en funksjon f tar som parametre et endelig sett med verdier og har som funksjonsverdi y én av elementene i et endelig sett.\cite{norvig} I vårt tilfelle vil for eksempel parameterne (regn, tidligere ulykke, tåke) gi funksjonsverdien “høy” som da angir risikoprofilen for en gitt veistrekning. Hvis y er et tall kalles klassifisering teknisk sett regresjon, noe som kan være relevant hvis man ønsker å bruke parametrene til å angi en sannsynlighet for at noe inntreffer, som om en flom vil inntreffe på veistrekningen mens man kjører på den.
+Klassifisering er et problem hvor en funksjon $f$ tar som parametre et endelig sett med verdier og har som funksjonsverdi $y$ én av elementene i et endelig sett.\cite{norvig} I vårt tilfelle vil for eksempel parameterne \textit{regn, tidligere ulykke, tåke} gi funksjonsverdien \textit{høy} som da angir risikoprofilen for en gitt veistrekning. Hvis $y$ er et tall kalles klassifisering teknisk sett regresjon, noe som kan være relevant hvis man ønsker å bruke parametrene til å angi en sannsynlighet for at noe inntreffer, som om en flom vil inntreffe på veistrekningen mens man kjører på den.
 
 Klassifiseringer er et sentralt problem innenfor kunstig intelligens. Den generelle metoden som benyttes bruker maskinlæringsteknikker som utnytter et sett med treningsdata. Klassifiseringen blir gitt sammen med parametrene og læringsalgoritmen som blir brukt lærer seg å generalisere over dataene for å kunne ta generelle beslutninger basert på parametre den ikke har sett før. Læringen vil i mange tilfeller kunne fortsette etter at systemet er tatt i bruk i tilfeller hvor systemet kan få tilbakemeldinger på om det utførte en riktig klassifisering. I vårt tilfelle vil systemet for eksempel kunne utvides til å ta hensyn til nye datakilder ved at systemet kartlegger parametrene i nye ulykker.	
 
 \subsection{K-nærmeste naboer}
-K-nærmeste naboer er en av de enkleste teknikkene innenfor instansbasert læring. I K-nærmeste naboer vil læringsalgoritmen se på alle eksemplene i læringssettet som punkter n i et euklidisk rom Rn og kun generalisere ut i fra de k nærmeste punktene når et sett skal klassifiseres.\cite{mitchell} Dette er en såkalt “lat” teknikk som vil si at generaliseringen kun skjer når algoritmen blir presentert med et problem. K-nærmeste naboer er en relevant teknikk å vurdere fordi det er en enkel teknikk. Vårt klassifiseringsproblem er avansert og en enkel teknikk vil gjøre det lettere å samle inn treningsdata. Det vil også være hensiktsmessig i vårt domene at algoritmen kun generaliserer over et begrenset utvalg av treningseksempler ettersom det er en reell mulighet at treningsdataene vokser i størrelse og i stor grad består av eksempler som ikke er relevante for parametrene som skal klassifiseres. I tillegg vil den utsatte beregningen være av stor nytte i et distribuert system. Det at kun et begrenset antall treningseksempler brukes i en klassifisering vil gjøre det mulig at klientene selv kan ta seg av utregningene involvert og dette vil redusere behovet for en kostbar infrastruktur som en sentral tjener for tungregning.
+K-nærmeste naboer er en av de enkleste teknikkene innenfor instansbasert læring. I K-nærmeste naboer vil læringsalgoritmen se på alle eksemplene i læringssettet som punkter $n$ i et euklidisk rom $R^n$ og kun generalisere ut i fra de $k$ nærmeste punktene når et sett skal klassifiseres.\cite{mitchell} Dette er en såkalt \textit{lat} teknikk som vil si at generaliseringen kun skjer når algoritmen blir presentert med et problem. K-nærmeste naboer er en relevant teknikk å vurdere fordi det er en enkel teknikk. Vårt klassifiseringsproblem er avansert og en enkel teknikk vil gjøre det lettere å samle inn treningsdata. Det vil også være hensiktsmessig i vårt domene at algoritmen kun generaliserer over et begrenset utvalg av treningseksempler ettersom det er en reell mulighet at treningsdataene vokser i størrelse og i stor grad består av eksempler som ikke er relevante for parametrene som skal klassifiseres. I tillegg vil den utsatte beregningen være av stor nytte i et distribuert system. Det at kun et begrenset antall treningseksempler brukes i en klassifisering vil gjøre det mulig at klientene selv kan ta seg av utregningene involvert og dette vil redusere behovet for en kostbar infrastruktur som en sentral tjener for tungregning.
 
 \subsection{Utfordringer og problemer}
 Den største utfordringen ved å implementere et slikt system ligger i at treningsdataene ikke er trivielle å samle inn. Det vil være en utfording å samle inn historisk data om forholdene rundt ulykker i en så stor grad at det kan brukes som treningsdata. Manglende data vil kunne gjøre systemet sensitivt for enkelte parametre og ikke nødvendigvis for kombinasjonen av parametre som er nødvendig for å nøyaktig kunne klassifisere parametre til en risikoprofil.  
@@ -482,10 +503,5 @@ Konklusjonen vi har kommet til er at en applikasjon med funksjonaliteten vi øns
 
 \addcontentsline{toc}{chapter}{Referanser}
 %\bibliography{bibtex/bibliography}
-
-
-\chapter{Vedlegg}
-\label{cha:appendices}
-
 
 \end{document}
