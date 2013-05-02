@@ -335,6 +335,13 @@ Prosedyre for risikodiagram:
 \item[--]Tiltak og videre arbeid (oppfølging)
 \end{enumerate}
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{figs/risiko2}
+\label{fig:risiko2}
+%\caption{Risikodiagram for ruten Trondheim - Støren}
+\end{figure}
+
 Ved å rangere en gitt hendelse for skadeomfang/konsekvens mot sannsynligheten for at hendelsen faktisk skjer kan man ved enkel summering finne RPN-verdien (Risk Priority Number) for oppgaven som skal bli utført. Man overfører altså virkelighetsbeskrivelser til tall.  
 
 %\begin{figure}[H]
@@ -356,13 +363,6 @@ I figur \ref{fig:risiko1} vises et eksempel på hvordan et punkt langs kjørerut
 
 Hvilke og hvordan disse tallene som skal bli presentert til brukeren av systemet er kanskje noe av det mer krevende arbeidet som må utledes. Når en risiko øker kan andre risikofaktorer øke proporsjonalt. For eksempel kan nysnø sammen med høy snømengde gjøre at veiene ikke er brøytet, og samtidig kan viltdyr trekke ned i veien og skape trafikkfarlige situasjoner. Hvem av disse er det som kan være av størst betydning? Det er mange forskjellige situasjoner som må tas hensyn til langs veistrekningen. Hvilke er mest relevant for brukeren?
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{figs/risiko2}
-\label{fig:risiko2}
-%\caption{Risikodiagram for ruten Trondheim - Støren}
-\end{figure}
-\noindent
 Viktige kilder blir å implementere ras og flom data fra samarbeidet mellom NVE, Statens veivesen og Meteorologisk institutt. Kolonnekjøring og strøing av veiene fra NVDB og Statens veivesen. Veiforhold med hensyn på data fra meteorologisk institutt gjennom yr.no, farlige områder med historiske data av viltpåkjørsler (om hjorteviltregisteret gav API på fallvilt, påkjørte dyr). Trafikktetthet og historiske data fra aktører som Falcken og Statens veivesen. Sikt, værforhold og andre kilder kan skaffes gjennom crowdsourcing eller andre aktører.
 
 Utfordringen for å gjøre dette til et intelligent transportsystem blir å finne skillekriterier mellom forskjellige farer og hvordan veie de opp mot hverandre gjennom maskinlæring.
@@ -493,9 +493,9 @@ Ved å varsle brukeren om farlige områder vil man kunne redusere antall trafikk
 \section{Videre arbeid}
 \label{sec:varbeid}
 
-I løpet av dette prosjektet har vi hovedsaklig jobbet med å kartlegge hvilke datakilder som er tilgjengelig i Norge og vurdert hvilke av dem som er best egnet for våre formål. Vi mener at funksjonaliteten vi har skissert for systemet vårt er realiserbar, selv om det kreves mye arbeid før det eventuelt kan settes i live. En sentral utfordringen i arbeidet videre blir å koordinere og tolke dataene som samles inn. Vi har gjort vurderinger rundt hvilke kilder som gir mest relevant informasjon, og har også gitt anbefalinger på grunnlag av hvor enkelt det er å integrere mot de enkelte kildene. Vi har derimot ikke gjennomført noen faktiske tester opp mot de enkelte API'ene, og det kan være utfordringer knyttet til hver enkelt kilde vi enda ikke vet om. 
+I løpet av dette prosjektet har vi hovedsaklig jobbet med å kartlegge hvilke datakilder som er tilgjengelig i Norge og vurdert hvilke av dem som er best egnet for våre formål. Vi mener at funksjonaliteten vi har skissert for systemet vårt er realiserbar, selv om det kreves mye arbeid før det eventuelt kan settes i live. En sentral utfordringen i arbeidet videre blir å koordinere og tolke dataene som samles inn. Vi har gjort vurderinger rundt hvilke kilder som gir mest relevant informasjon, og har også gitt anbefalinger på grunnlag av hvor enkelt det er å integrere mot de enkelte kildene. Vi har derimot ikke gjennomført noen større tester opp mot de enkelte API'ene utover enkle spørringer, og det kan være utfordringer knyttet til hver enkelt kilde vi enda ikke vet om. 
 
-Med tanke på å utelde en risikoprofil, må vi  enda større grad kunne skille mellom hvilken informasjon som er relevant eller ikke. Vi må også gjennomføre analyser av historiske data for å kunne komme frem til en passende model for å utlede risikoprofilen . Klarhet i hvordan intelligente metoder kan brukes i denne prosessen er også vesentlig.  Vi har diskutert det overfladiske og identifisert metoder som potensielt kan brukes, men vi har ikke testet det i praksis. Det gjenstår en god del arbeid for å komme frem til en ferdig modell. I tillegg vil det være en stor utfordring å samle inn en tilstrekkelig mengde treningsdata for å trene en intelligent algoritme. Vi har identifisert kilder til historisk informasjon, via NVDB, men er fremdeles usikker på hvordan denne informasjonen er lagret og hvilke parametre som inngår.
+Med tanke på å utrede en risikoprofil, må vi  enda større grad kunne skille mellom hvilken informasjon som er relevant eller ikke. Vi må også gjennomføre analyser av historiske data for å kunne komme frem til en passende model for å utlede risikoprofilen . Klarhet i hvordan intelligente metoder kan brukes i denne prosessen er også vesentlig.  Vi har diskutert det overfladiske og identifisert metoder som potensielt kan brukes, men vi har ikke testet det i praksis. Det gjenstår en god del arbeid for å komme frem til en ferdig modell. I tillegg vil det være en stor utfordring å samle inn en tilstrekkelig mengde treningsdata for å trene en intelligent algoritme. Vi har identifisert kilder til historisk informasjon, via NVDB, men er fremdeles usikker på hvordan denne informasjonen er lagret og hvilke parametre som inngår.
 
 Vi har skissert en løsning på et komplisert problem. Selv om vi har kartlagt mange av elementene, er det på ingen måte en komplett systembeskrivelse. Det er nødvendig med videre undersøkelser for å belyse alle aspekter av systemet, i tllegg til dette kan det være viktige utfordringer vi har oversett. 
 
